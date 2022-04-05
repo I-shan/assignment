@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <style>
+
+        a:link {
+            font-size: large;
+            background-color: aliceblue;
+        }
+
+        a:visited {
+            background-color: cyan;
+        }
+
+        a:hover {
+            background-color: lightgreen;
+        }
+
+        a:active {
+            background-color: hotpink;
+        }
+        input[type=text], select {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 30%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: #f2f2f2">
+<h1 style="margin-left:400px ">Customers and Product homepage</h1> <br>
+
+<div style="width: 40%;display: inline-block;">
+    <a th:text="${message}"> </a><br>
+
+    <p><button class="w3-button w3-light-green" onclick="location.href='/customer/list'">Customers list</button></p>
+
+    <br>
+    <form action="/customer/search" method="get">
+        Get customer : <br>
+        <input type="text" name="id" placeholder="ID"> <br>
+        <input type="text" name="first" placeholder="FirstName"> <br>
+        <input type="text" name="last" placeholder="LastName"> <br>
+        <input type="submit" value="search">
+    </form>
+</div>
+
+<div style = " width:40%; position:relative; left:800px; top: -370px ">
+
+
+    <p><button class="w3-button w3-light-green" onclick="location.href='/product/list'">Product list</button></p>
+
+    <br>
+
+    <form action="/product/search" method="get">
+        Get Product : <br>
+        <input type="text" name="id" placeholder="ID"> <br>
+        <input type="text" name="name" placeholder="name"> <br>
+        <input type="submit" value="search">
+    </form>
+
+</div>
+</body>
+</html>
